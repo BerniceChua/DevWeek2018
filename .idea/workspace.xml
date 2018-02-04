@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="215b7e61-6007-44fa-87cc-784d4a704289" name="Default" comment="resolve merge conflicts" />
+    <list default="true" id="215b7e61-6007-44fa-87cc-784d4a704289" name="Default" comment="resolve merge conflicts">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agora_base_overlay.html" afterPath="$PROJECT_DIR$/agora_base_overlay.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

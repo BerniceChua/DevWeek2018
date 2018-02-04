@@ -22,7 +22,7 @@
         }
         body {
           margin: 0;
-          
+
         }
 
         nav {
@@ -480,34 +480,31 @@ getDevices();
                 var loc_dat = eventObj['detail']['exports']['text/plain']
 
 
-                navigator.geolocation.getCurrentPosition(function(location) {
+                // READ EXISTING OBJECT
+                recoveredObject = readLocalObject( object_id )
+                console.log(' wow ', recoveredObject )
+                if( ! recoveredObject ){
+                    recoveredObject = { history:[] }
+                }
 
 
-                    // READ EXISTING OBJECT
-                    recoveredObject = readLocalObject( object_id )
-                    console.log(' wow ', recoveredObject )
-                    if( ! recoveredObject ){
-                        recoveredObject = { history:[] }
-                    }
+                var entered_data = loc_dat;
+                //var entered_coordinates =location.coords.latitude+'N'+' '+location.coords.longitude+'W';
+
+                var object_id = 'someID';
+                var history_entry_object =  {
+                    'note': entered_data
+                }
+
+                recoveredObject.history.push( history_entry_object );
+
+                // SAVE APPENDED LOCAL OBJECT
+                writeLocalObject( object_id  , recoveredObject  )
+                console.log( 'My NOTES: ' , readLocalObject( object_id ) )
 
 
-                    var entered_data = loc_dat;
-                    var entered_coordinates =location.coords.latitude+'N'+' '+location.coords.longitude+'W';
-
-                    var object_id = 'someID';
-                    var history_entry_object =  {
-                        'coordinates': entered_coordinates,
-                        'note': entered_data
-                    }
-
-                    recoveredObject.history.push( history_entry_object );
-
-                    // SAVE APPENDED LOCAL OBJECT
-                    writeLocalObject( object_id  , recoveredObject  )
-                    console.log( 'My GEO NOTES: ' , readLocalObject( object_id ) )
-
-
-                });
+                //navigator.geolocation.getCurrentPosition(function(location) {
+                //});
             });
 
 
