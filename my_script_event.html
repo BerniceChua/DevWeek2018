@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>MY SCRIPT DEMO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+
+        <link rel="stylesheet" href="bower_components/myscript/dist/myscript.min.css"/>
+        <script src="bower_components/myscript/dist/myscript.min.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+
+        <script>
+
+            //In JavaScript, create the editor attached to editor DOM Node:
+            var editorElement = document.getElementById('editor');
+
+            MyScript.register(editorElement, {
+                recognitionParams: {
+                    type: 'MATH',
+                    server: {
+                        applicationKey: 'a808eb62-6d8d-449b-a2ba-951936adff99',
+                        hmacKey: 'ab57ccba-3153-49d8-9b09-85109ccd3182'
+                    }
+                }
+            });
+
+        </script>
+
+        <div id="editor"></div>
+
+
+    </body>
+
+</html>
