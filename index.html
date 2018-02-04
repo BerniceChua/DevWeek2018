@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Agora Web Sample</title>
+<title>MemWrite App</title>
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
 <script src="build/AgoraRTCSDK-2.0.0.js"></script>
 <script src="vendor/jquery.js"></script>
@@ -13,9 +13,21 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="HandheldFriendly" content="true"/>
 
-        <title>WEBSOCKET Text iink</title>
+
+
+        <title>MemWrite</title>
 
         <link rel="stylesheet" href="bower_components/myscript/dist/myscript.min.css"/>
+
+        <custom-style>
+                <style>
+                    iron-component-page {
+                        --iron-component-page-header-color: #1A9FFF;
+                    }
+                </style>
+        </custom-style>
+
+
         <style>
         * {
           box-sizing: border-box;
@@ -537,7 +549,9 @@ getDevices();
                 apiVersion: 'V4',
                 v4 : {
                   lang : 'zh_TW',
+                  color:'#00FF00',
                   text : {
+                    color:'#00FF00',
                     guide : {
                       enable : false
                     }
@@ -551,6 +565,7 @@ getDevices();
                 },
                 }
             });
+
 
             editorElement.setBackgroundColor(Color.TRANSPARENT);
             window.addEventListener('resize', function () {
