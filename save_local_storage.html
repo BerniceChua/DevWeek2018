@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>SAVE LOCAL STORAGE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <script>
+
+            function writeLocalObject( id_in, obj_in ){
+                localStorage.setItem( id_in , JSON.stringify( obj_in ));
+            }
+            function readLocalObject( id_in ){
+                var retrievedObject = localStorage.getItem( id_in );
+                return retrievedObject;
+            }
+
+            // DEFINE OBJECT
+            var object_id = 'someID';
+            var object_data =  {
+                'something':'111',
+                'special':'33',
+                'here':'wowowwowo',
+                'my_array_of_random_stuff':[1,3,5,4,5]
+            }
+
+            // SAVE LOCAL OBJECT
+            writeLocalObject( object_id  ,   object_data )
+
+            // READ LOCAL OBJECT
+            recoveredObject = readLocalObject( object_id )
+            console.log(' wow ', recoveredObject )
+
+        </script>
+    </body>
+
+</html>
